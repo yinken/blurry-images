@@ -1,0 +1,88 @@
+.blurred-image-container {
+  position: relative;
+  margin:0 auto;
+}
+/* Determine height */
+.blurred-image-container, .blurred-image {
+}
+
+.blurred-image, .clear-image {
+  background-image: url('../img/image.jpg');
+  background-position-x: 0%;
+  background-position-y:  50%;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all ease-in-out .5s;
+  z-index:1;
+}
+
+.mask .overlay {
+  width:100%;
+  height:100%;
+  position: absolute;
+  z-index:2;
+}
+.mandala .mask .overlay {
+  background-color:rgba(102,121,151,0.55);
+}
+.facil .mask .overlay {
+  background-color:rgba(227,224,198,0.55);
+}
+.ono .mask .overlay {
+  background-color:rgba(144,138,138,0.55);
+}
+.qiu .mask .overlay {
+  background-color:rgba(26,11,7,0.55);
+}
+
+
+
+.card:hover .mask .blurred-image {
+  filter: blur(0px);
+}
+.blurred-image {
+  filter: blur(15px);
+  /*transform: translate3d(calc(-33% + 195px),calc(-65% + 170px),0);*/
+  transition: all ease-in-out .5s;
+  position: absolute;
+  z-index:1;
+  background-position: center center;
+}
+
+.clear-image {
+  width: 100%;
+  height: 100%;
+}
+/* ==== CARD ====*/
+
+/* ==== TILES ====*/
+.tile.is-parent.is-horizontal.is-flex-wrap {
+  flex-wrap: wrap;
+}
+.tile.is-parent.is-horizontal.is-flex-wrap .tile.is-child {
+  flex-basis:calc(33.33% - 2rem);
+  margin:1rem;
+}
+.tile.is-child {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  border:0;
+}
+.tile.is-parent {
+  padding:1rem;
+}
+.is-parent.is-vertical .tile.is-child:not(:last-child):after {
+  height:0 !important;
+}
+/* === BG-IMG === */
+.bg-img {
+  background-position: center center;
+}
